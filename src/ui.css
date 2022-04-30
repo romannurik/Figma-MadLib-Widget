@@ -1,0 +1,4 @@
+.fakeText mark {
+  background-color: var(--mark-color-bg);
+  color: var(--mark-color);
+}
