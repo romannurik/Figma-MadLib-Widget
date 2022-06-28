@@ -1,23 +1,26 @@
 {
   "dependencies": {
-    "@create-figma-plugin/ui": "^1.8.1",
-    "@create-figma-plugin/utilities": "^1.8.1",
+    "@create-figma-plugin/ui": "^1.9.2",
+    "@create-figma-plugin/utilities": "^1.9.2",
     "preact": "^10"
   },
   "devDependencies": {
-    "@create-figma-plugin/build": "^1.8.1",
-    "@create-figma-plugin/tsconfig": "^1.8.1",
-    "@figma/plugin-typings": "1.45.0",
-    "@figma/widget-typings": "^1.2.3",
+    "@create-figma-plugin/build": "^1.9.2",
+    "@create-figma-plugin/tsconfig": "^1.9.2",
+    "@figma/plugin-typings": "1.47.0",
+    "@figma/widget-typings": "^1.3.0",
     "typescript": "^4"
   },
   "scripts": {
+    "build:google": "PLUGIN_ID=1123677736425471958 npm run build",
+    "start:google": "PLUGIN_ID=1123677736425471958 npm run start",
     "build": "build-figma-plugin --typecheck --minify",
-    "watch": "build-figma-plugin --typecheck --watch"
+    "start": "build-figma-plugin --typecheck --watch"
   },
   "figma-plugin": {
     "editorType": [
-      "figjam"
+      "figjam",
+      "figma"
     ],
     "containsWidget": true,
     "permissions": [

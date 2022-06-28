@@ -1,15 +1,1 @@
-{
-  "api": "1.0.0",
-  "widgetApi": "1.0.0",
-  "editorType": [
-    "figjam"
-  ],
-  "containsWidget": true,
-  "id": "1051929673182125608",
-  "name": "Mad Lib",
-  "main": "build/main.js",
-  "ui": "build/ui.js",
-  "permissions": [
-    "currentuser"
-  ]
-}
+{"api":"1.0.0","widgetApi":"1.0.0","editorType":["figjam","figma"],"containsWidget":true,"id":"1051929673182125608","name":"Mad Lib","main":"build/main.js","ui":"build/ui.js","permissions":["currentuser"]}

@@ -170,39 +170,38 @@ interface PhraseProps extends BaseProps {
 function Phrase({ templatePhrase, reveal, value, color, widgetNodeId, setter }: PhraseProps) {
   let { placeholder } = templatePhrase;
 
-  // if (reveal) {
-  //   // Not quite ready because <Input> can't be auto-sized :-/
-  //   return <AutoLayout direction='horizontal' padding={{ bottom: 1 }}>
-  //     <Input value={value?.value || ''}
-  //       // width={(value?.value || placeholder).length * 10}
-  //       width={100}
-  //       placeholder={placeholder}
-  //       fontFamily="Kalam"
-  //       fontWeight="bold"
-  //       inputBehavior='wrap'
-  //       inputFrameProps={{
-  //         padding: { left: value ? 0 : 2, top: 7, right: value ? 0 : 2, bottom: 0 },
-  //         fill: color.tonal,
-  //         effect: {
-  //           type: 'drop-shadow',
-  //           offset: { x: 0, y: 1 },
-  //           blur: 0,
-  //           color: color.fill,
-  //         }
-  //       }}
-  //       fill={color.fill}
-  //       fontSize={16}
-  //       lineHeight={16}
-  //       onTextEditEnd={ev => {
-  //         setter(templatePhrase.id, ev.characters ? {
-  //           authorId: figma.currentUser!.id!,
-  //           authorName: figma.currentUser!.name,
-  //           authorPhotoUrl: figma.currentUser!.photoUrl!,
-  //           value: ev.characters,
-  //         } : undefined);
-  //       }} />
-  //   </AutoLayout>;
-  // }
+  if (reveal) {
+    // Not quite ready because <Input> can't be auto-sized :-/
+    return <AutoLayout direction='horizontal' padding={{ bottom: 1 }}>
+      <Input value={value?.value || ''}
+        // width={(value?.value || placeholder).length * 10}
+        placeholder={placeholder}
+        fontFamily="Kalam"
+        fontWeight="bold"
+        inputBehavior='wrap'
+        inputFrameProps={{
+          padding: { left: value ? 0 : 2, top: 7, right: value ? 0 : 2, bottom: 0 },
+          fill: color.tonal,
+          effect: {
+            type: 'drop-shadow',
+            offset: { x: 0, y: 1 },
+            blur: 0,
+            color: color.fill,
+          }
+        }}
+        fill={color.fill}
+        fontSize={16}
+        lineHeight={16}
+        onTextEditEnd={ev => {
+          setter(templatePhrase.id, ev.characters ? {
+            authorId: figma.currentUser!.id!,
+            authorName: figma.currentUser!.name,
+            authorPhotoUrl: figma.currentUser!.photoUrl!,
+            value: ev.characters,
+          } : undefined);
+        }} />
+    </AutoLayout>;
+  }
 
   return <AutoLayout
     fill={(value && !reveal) ? color.fill : color.tonal}
